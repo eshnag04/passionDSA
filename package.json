@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "nodemon server/index.cjs",
-    "dev:client": "vite"
+    "dev:client": "vite",
+    "build": "vite build && rm -rf docs && mkdir docs && cp -R dist/* docs/",
+    "preview": "vite preview"
   },
-  
   "dependencies": {
     "dotenv": "^17.2.1",
     "express": "^4.19.2",
@@ -19,7 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.4.19",
     "concurrently": "^9.0.1",
     "postcss": "^8.4.33",
